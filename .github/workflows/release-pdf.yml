@@ -1,0 +1,43 @@
+name: Compile LaTeX & Release
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Позволяет запускать сборку вручную из интерфейса GitHub
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Быстрая сборка через Docker-образ с TeX Live на базе Alpine
+      - name: Compile LaTeX documents
+        uses: docker://ghcr.io/xu-cheng/texlive:latest
+        with:
+          entrypoint: /bin/sh
+          args: -c "apk add --no-cache make bash && make all"
+
+      # Публикация/обновление релиза
+      - name: Update GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: "Latest PDF Build"
+          body: |
+            Автоматически скомпилированные версии резюме и сопроводительного письма.
+            
+            Последний коммит: ${{ github.event.head_commit.message }}
+            Время сборки: ${{ github.event.head_commit.timestamp }}
+          draft: false
+          prerelease: false
+          files: |
+            cv.pdf
+            letter.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

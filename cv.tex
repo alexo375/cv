@@ -1,0 +1,159 @@
+\documentclass[letterpaper,11pt]{article}
+
+\input{preamble/common}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.7in} % было "-.5in". Подняли текст чуть выше
+\addtolength{\textheight}{1.4in} % было "1.0in". Увеличили рабочую область страницы
+
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-----------CUSTOM-COMMANDS-----------
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+%----------ЗАГОЛОВОК----------
+\begin{center}
+  \begin{minipage}[b]{0.80\textwidth}
+      \textbf{\Huge \scshape Горобченко Александр} \\ \vspace{4pt}
+      \large Junior / Intern ML Engineer \\ \vspace{4pt}
+      \small \href{tel:+79953755007}{+7 (995) 375-50-07} $|$ 
+      \href{mailto:alexo375@yandex.ru}{\underline{alexo375@yandex.ru}} $|$ 
+      \href{https://t.me/alexo375}{\underline{t.me/alexo375}} $|$
+      \href{https://github.com/almost-wizard}{\underline{github.com/almost-wizard}} \\ \vspace{2pt}
+      \small Рязань / Удаленная работа
+  \end{minipage}%
+  \begin{minipage}[b]{0.18\textwidth}
+      \raggedleft
+      \includegraphics[width=4cm, keepaspectratio]{me.png} 
+  \end{minipage}
+\end{center}
+
+%----------О-СЕБЕ----------
+\section{О Себе}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     ML Engineer с опытом разработки алгоритмов CV и построения ML-пайплайнов.
+     Разрабатываю модели для анализа изображений, проектирую микросервисную архитектуру для ML-решений.
+     Имею опыт обработки спутниковых изображений на Python и C++.
+     Ориентирован на создание масштабируемых ML систем.
+    }} 
+ \end{itemize}
+
+%-----------НАВЫКИ-----------
+\section{Технические навыки}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Python, ML \& CV}{: PyTorch, CatBoost, XGBoost, LightGBM, Scikit-Learn, OpenCV, Pandas, NumPy, SciPy, GDAL} \\
+     \textbf{C++}{: CMake, LibTorch, Boost, GTest, Valgrind, Conan} \\
+     \textbf{Data Engineering}{: PostgreSQL, Greenplum, ClickHouse, OracleDB, MongoDB, Amazon S3, Airflow, Spark, Kafka} \\
+     \textbf{DevOps \& CI/CD}{: Docker, Git, Github Actions, Linux (NixOS, Ubuntu)}
+    }}
+ \end{itemize}
+
+%-----------ОПЫТ-----------
+\section{Опыт работы}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {НИИ Фотон, ФГБОУ ВО РГРТУ}{Рязань}
+      {R\&D Инженер (C++ / Python / ML)}{Июль 2023 - Июль 2026}
+      \resumeItemListStart
+        \resumeItem{Разработал классические и ML алгоритмы обнаружения изменений на спутниковых
+        снимках площадной съемки высокого разрешения. С нуля подготовил и аннотировал обучающую выборку для CNN-модели.}
+        \resumeItem{Опубликовал 3 научные статьи в рамках конференций
+        \href{https://elibrary.ru/item.asp?id=82496414}{\underline{СТНО-2025}},
+        \href{https://elibrary.ru/item.asp?id=87261582}{\underline{НИТ-2025}} и
+        СТНО-2026.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------ПРОЕКТЫ-----------
+\section{Проекты}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Change Detector} $|$ \emph{C++, Python, PyTorch, LibTorch}}{Август 2025 - Июнь 2026}
+          \resumeItemListStart
+            \resumeItem{Реализовал детерминированные алгоритмы для обнаружения изменений на спутниковых снимках.
+            Оптимизировал их работу, реализовав подбор гиперпараметров биоинспирированными алгоритмами.}
+            \resumeItem{Обучил CNN (UNet++, ResNet-34) для сегментации изменений на снимках,
+            выполнив ручную разметку кастомного датасета (ключевые метрики: $F1 \approx 0.87$, $IoU \approx 0.76$)}
+          \resumeItemListEnd
+          
+      \resumeProjectHeading
+          {\href{https://github.com/almost-wizard/acc-2025-validation-pipeline}{\textbf{\underline{ML Image Validator}}} $|$ \emph{Python, FastAPI, ML Pipeline}}{Октябрь 2025 - Декабрь 2025}
+          \resumeItemListStart
+            \resumeItem{Реализовал микросервисный пайплайн для ML-валидации изображений в команде из 3 человек.}
+            \resumeItem{Создал на FastAPI микросервис, обеспечивающий стабильную проверку качества данных.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\href{https://github.com/almost-wizard/native-compiler}{\textbf{\underline{Native-compiler}}} $|$ \emph{C++}}{Октябрь 2025 - Декабрь 2025}
+          \resumeItemListStart
+            \resumeItem{Разработал консольную утилиту, демонстрирующую работу основных фаз компилятора.}
+            \resumeItem{Реализовал лексический, семантический, синтаксический анализ; генератор 3-адресного кода, постфиксной формы.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------ОБРАЗОВАНИЕ-----------
+\section{Образование}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Центральный Университет}{Москва}
+      {Математика и компьютерные науки, трек ML-online $|$ GPA: 9.25 $|$ Магистратура}{2025 - Настоящее время}
+    \resumeItemListStart
+      \resumeItem{Релевантные курсы: ML, Data Engineering, Основы статистики}
+      \resumeItem{Выиграл грант, покрывающий 50\% стоимости обучения}
+    \resumeItemListEnd
+    \resumeSubheading
+      {РГРТУ имени В.Ф. Уткина}{Рязань}
+      {Программная инженерия $|$ GPA: 4.80 $|$ Бакалавриат}{2022 - 2026}
+    \resumeItemListStart
+      \resumeItem{Релевантные курсы: Высшая математика, алгоритмы, низкоуровневое программирование}
+      \resumeItem{Бюджетная форма обучения}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+  
+%-----------Дополнительно-----------
+\section{Дополнительная информация}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Языки}{: Английский (B2)}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}

@@ -1,0 +1,20 @@
+{
+  "name": "Bio LaTeX Devcontainer",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "James-Yu.latex-workshop",
+        "valentjn.vscode-ltex",
+        "eamodio.gitlens"
+      ],
+      "settings": {
+        "latex-workshop.view.pdf.viewer": "tab"
+      }
+    }
+  },
+  "remoteUser": "texlive",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}"
+}
