@@ -3,6 +3,7 @@ name: Compile LaTeX & Release
 on:
   push:
     branches:
+      - main
       - master
   workflow_dispatch: # Позволяет запускать сборку вручную из интерфейса GitHub
 
@@ -16,12 +17,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Быстрая сборка через Docker-образ с TeX Live на базе Alpine
+      # Сборка через официальный экшен texlive-action
       - name: Compile LaTeX documents
-        uses: docker://ghcr.io/xu-cheng/texlive:latest
+        uses: xu-cheng/texlive-action@v2
         with:
-          entrypoint: /bin/sh
-          args: -c "apk add --no-cache make bash && make all"
+          scheme: full
+          run: |
+            apk add --no-cache make bash
+            make all
 
       # Публикация/обновление релиза
       - name: Update GitHub Release
