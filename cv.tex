@@ -51,9 +51,9 @@
       \textbf{\Huge \scshape Горобченко Александр} \\ \vspace{4pt}
       \large Junior / Intern ML Engineer \\ \vspace{4pt}
       \small \href{tel:+79953755007}{+7 (995) 375-50-07} $|$ 
-      \href{mailto:alexo375@yandex.ru}{\underline{alexo375@yandex.ru}} $|$ 
-      \href{https://t.me/alexo375}{\underline{t.me/alexo375}} $|$
-      \href{https://github.com/almost-wizard}{\underline{github.com/almost-wizard}} \\ \vspace{2pt}
+      \href{mailto:\username@yandex.ru}{\underline{\username@yandex.ru}} $|$ 
+      \href{https://t.me/\username}{\underline{t.me/\username}} $|$
+      \href{\github}{\underline{github.com/\username}} \\ \vspace{2pt}
       \small Рязань / Удаленная работа
   \end{minipage}%
   \begin{minipage}[b]{0.18\textwidth}
@@ -68,7 +68,7 @@
     \small{\item{
      ML Engineer с опытом разработки алгоритмов CV и построения ML-пайплайнов.
      Разрабатываю модели для анализа изображений, проектирую микросервисную архитектуру для ML-решений.
-     Имею опыт обработки спутниковых изображений на Python и C++.
+     Имею опыт обработки спутниковых изображений на Python и \cpp.
      Ориентирован на создание масштабируемых ML систем.
     }} 
  \end{itemize}
@@ -77,8 +77,8 @@
 \section{Технические навыки}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Python, ML \& CV}{: PyTorch, CatBoost, XGBoost, LightGBM, Scikit-Learn, OpenCV, Pandas, NumPy, SciPy, GDAL} \\
-     \textbf{C++}{: CMake, LibTorch, Boost, GTest, Valgrind, Conan} \\
+     \textbf{Python, ML \& CV}{: PyTorch, CatBoost, XGBoost, LightGBM, Scikit-Learn, OpenCV, Pandas, NumPy, SciPy} \\
+     \textbf{\cpp}{: CMake, ONNX, Boost, GTest, Valgrind, Conan} \\
      \textbf{Data Engineering}{: PostgreSQL, Greenplum, ClickHouse, OracleDB, MongoDB, Amazon S3, Airflow, Spark, Kafka} \\
      \textbf{DevOps \& CI/CD}{: Docker, Git, Github Actions, Linux (NixOS, Ubuntu)}
     }}
@@ -89,14 +89,17 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {НИИ Фотон, ФГБОУ ВО РГРТУ}{Рязань}
-      {R\&D Инженер (C++ / Python / ML)}{Июль 2023 - Июль 2026}
+      {R\&D Инженер (\cpp / Python / ML)}{Июль 2023 - Июль 2026}
       \resumeItemListStart
-        \resumeItem{Разработал классические и ML алгоритмы обнаружения изменений на спутниковых
-        снимках площадной съемки высокого разрешения. С нуля подготовил и аннотировал обучающую выборку для CNN-модели.}
-        \resumeItem{Опубликовал 3 научные статьи в рамках конференций
+        \resumeItem{Повысил качество проведения линии пореза при построении мозаичных изображений площадной съемки
+        путем разработки нового метода формирования стоимостной карты штрафов --- изменений местности}
+        \resumeItem{Разработал детерминированные и ML алгоритмы обнаружения изменений на спутниковых
+        снимках площадной съемки. С нуля подготовил и аннотировал обучающую выборку для CNN-модели.}
+        \resumeItem{Опубликовал 4 научные статьи на конференциях
         \href{https://elibrary.ru/item.asp?id=82496414}{\underline{СТНО-2025}},
-        \href{https://elibrary.ru/item.asp?id=87261582}{\underline{НИТ-2025}} и
-        СТНО-2026.}
+        \href{https://elibrary.ru/item.asp?id=87261582}{\underline{НИТ-2025}},
+        АПКС ДЗЗ-2025 и
+        СТНО-2026}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -104,26 +107,24 @@
 \section{Проекты}
     \resumeSubHeadingListStart
       \resumeProjectHeading
-          {\textbf{Change Detector} $|$ \emph{C++, Python, PyTorch, LibTorch}}{Август 2025 - Июнь 2026}
+          {\href{\github/change-detector}{\textbf{\underline{Change Detector}}} $|$ \emph{\cpp, Python, PyTorch, ONNX}}{Август 2025 - Июнь 2026}
           \resumeItemListStart
-            \resumeItem{Реализовал детерминированные алгоритмы для обнаружения изменений на спутниковых снимках.
-            Оптимизировал их работу, реализовав подбор гиперпараметров биоинспирированными алгоритмами.}
-            \resumeItem{Обучил CNN (UNet++, ResNet-34) для сегментации изменений на снимках,
-            выполнив ручную разметку кастомного датасета (ключевые метрики: $F1 \approx 0.87$, $IoU \approx 0.76$)}
+            \resumeItem{Обучил CNN (UNet++, ResNet-34) для сегментации изменений на снимках. Метрики: $F1 \approx 0.86$, $IoU \approx 0.76$}
+            \resumeItem{Выполнил ручную разметку кастомного датасета, получив более 2000 эталонных снимков размером 256x256}
           \resumeItemListEnd
           
       \resumeProjectHeading
-          {\href{https://github.com/almost-wizard/acc-2025-validation-pipeline}{\textbf{\underline{ML Image Validator}}} $|$ \emph{Python, FastAPI, ML Pipeline}}{Октябрь 2025 - Декабрь 2025}
+          {\href{\github/acc-2025-validation-pipeline}{\textbf{\underline{ML Image Validator}}} $|$ \emph{Python, FastAPI, ML Pipeline}}{Октябрь 2025 - Декабрь 2025}
           \resumeItemListStart
-            \resumeItem{Реализовал микросервисный пайплайн для ML-валидации изображений в команде из 3 человек.}
-            \resumeItem{Создал на FastAPI микросервис, обеспечивающий стабильную проверку качества данных.}
+            \resumeItem{Реализовал микросервисный пайплайн для ML-валидации изображений в команде из 3 человек}
+            \resumeItem{Создал на FastAPI микросервис, обеспечивающий стабильную проверку качества данных}
           \resumeItemListEnd
 
       \resumeProjectHeading
-          {\href{https://github.com/almost-wizard/native-compiler}{\textbf{\underline{Native-compiler}}} $|$ \emph{C++}}{Октябрь 2025 - Декабрь 2025}
+          {\href{\github/native-compiler}{\textbf{\underline{Native-compiler}}} $|$ \emph{\cpp}}{Октябрь 2025 - Декабрь 2025}
           \resumeItemListStart
-            \resumeItem{Разработал консольную утилиту, демонстрирующую работу основных фаз компилятора.}
-            \resumeItem{Реализовал лексический, семантический, синтаксический анализ; генератор 3-адресного кода, постфиксной формы.}
+            \resumeItem{Разработал CLI утилиту, демонстрирующую работу основных фаз компилятора с реализацией 
+            лексического, семантического, синтаксического анализа; генератора 3-адресного кода и постфиксной формы}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
 
