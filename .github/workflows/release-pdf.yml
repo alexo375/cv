@@ -1,18 +1,27 @@
-name: Compile LaTeX & Release
+name: Compile LaTeX & Deploy
 
 on:
   push:
     branches:
       - main
       - master
-  workflow_dispatch: # Позволяет запускать сборку вручную из интерфейса GitHub
+  workflow_dispatch:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -36,7 +45,6 @@ jobs:
             Автоматически скомпилированные версии резюме и сопроводительного письма.
             
             Последний коммит: ${{ github.event.head_commit.message }}
-            Время сборки: ${{ github.event.head_commit.timestamp }}
           draft: false
           prerelease: false
           files: |
@@ -44,3 +52,18 @@ jobs:
             letter.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Публикация резюме на GitHub Pages
+      - name: Prepare site directory
+        run: |
+          mkdir -p _site
+          cp cv.pdf _site/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
