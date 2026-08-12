@@ -31,6 +31,18 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+\newcommand{\resumeSubheadingCompany}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-2pt}
+}
+
+\newcommand{\resumeSubrole}[1]{
+  \vspace{4pt}
+  \textit{\small#1}\par\vspace{2pt}
+}
+
 \newcommand{\resumeProjectHeading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
@@ -54,8 +66,8 @@
       \href{mailto:\username@yandex.ru}{\underline{\username@yandex.ru}} $|$ 
       \href{https://t.me/\username}{\underline{t.me/\username}} $|$
       \href{\github}{\underline{github.com/\username}} \\ \vspace{2pt}
-      \small Дата рождения: 11.09.2004 (21 год) \\ \vspace{2pt}
-      \small Рязань / Удаленная работа / Готов к релокации в Москву или Санкт-Петербург
+      \small 11.09.2004 \\ \vspace{2pt}
+      \small Рязань / Готов к релокации в Санкт-Петербург
   \end{minipage}%
   \begin{minipage}[b]{0.18\textwidth}
       \raggedleft
@@ -67,61 +79,55 @@
 \section{О Себе}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     ML Engineer с фокусом на Computer Vision и оптимизацию алгоритмов (Python / \cpp).
+     ML Engineer с экспертизой в Computer Vision и оптимизации алгоритмов (Python / \cpp).
      Имею 3 года R\&D-опыта в области обработки изображений и научные публикации.
-     Специализируюсь на полном цикле создания ML-решений: от исследований и подготовки датасетов до оптимизации инференса и микросервисного деплоя.
+     Специализируюсь на полном цикле создания ML-решений: от исследований и подготовки датасетов до оптимизации 
+     инференса и микросервисного деплоя.
     }} 
- \end{itemize}
-
-%-----------НАВЫКИ-----------
-\section{Технические навыки}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Python, ML \& CV}{: PyTorch, CatBoost, XGBoost, LightGBM, Scikit-Learn, OpenCV, Pandas, NumPy, SciPy} \\
-     \textbf{\cpp}{: CMake, ONNX, Boost, GTest, Valgrind, Conan} \\
-     \textbf{Data Engineering}{: PostgreSQL, Greenplum, ClickHouse, OracleDB, MongoDB, Amazon S3, Airflow, Spark, Kafka} \\
-     \textbf{DevOps \& CI/CD}{: Docker, Git, Github Actions, Linux (NixOS, Ubuntu)}
-    }}
  \end{itemize}
 
 %-----------ОПЫТ-----------
 \section{Опыт работы}
   \resumeSubHeadingListStart
-    \resumeSubheading
-      {НИИ Фотон, ФГБОУ ВО РГРТУ}{Рязань}
-      {R\&D Инженер (\cpp / Python / ML)}{Июль 2023 - Июль 2026}
-      \resumeItemListStart
-        \resumeItem{Устранил появление артефактов на мозаичных изображениях, разработав алгоритм формирования
-        стоимостной карты штрафов для корректного проведения линии пореза в условиях сложных сцен.}
-        \resumeItem{Разработал детерминированные и ML-алгоритмы обнаружения изменений на спутниковых
-        снимках площадной съемки. С нуля подготовил и аннотировал обучающую выборку для CNN-модели.}
-        \resumeItem{Опубликовал 4 научные статьи на конференциях
-        \href{https://elibrary.ru/item.asp?id=82496414}{\underline{СТНО-2025}},
-        \href{https://elibrary.ru/item.asp?id=87261582}{\underline{НИТ-2025}},
-        АПКС ДЗЗ-2025 и
-        СТНО-2026.}
-      \resumeItemListEnd
+    \resumeSubheadingCompany
+      {НИИ обработки аэрокосмических изображений <<Фотон>>}{Июль 2023 -- Июль 2026}
+      
+      \resumeSubrole{ML-инженер}
+      \small{Отвечал за полный цикл создания ML-компонента системы обнаружения изменений на аэрокосмических снимках площадной съемки: 
+      сформировал и разметил обучающий датасет по данным космических аппаратов, обучил нейросетевую модель сегментации
+      UNet\plusplus~на ResNet-34 с помощью PyTorch. 
+      Разработал прикладное ПО на \cpp~(с GUI на Qt), интегрировав в него обученную модель в формате ONNX и
+      объединив детерминированные алгоритмы компьютерного зрения с методами глубокого обучения.}
+      
+      \vspace{4pt}
+
+      \resumeSubrole{R\&D-инженер}
+      \small{Проводил научно-исследовательские работы в области обработки аэрокосмических изображений.
+      Устранил появление артефактов при сшивке мозаичных изображений сложных сцен,
+      разработав алгоритм формирования стоимостной карты штрафов для корректного проведения линии пореза.
+      Выполнил анализ предметной области, по материалам исследований подготовил и опубликовал 4 научные статьи.}
   \resumeSubHeadingListEnd
 
 %-----------ПРОЕКТЫ-----------
 \section{Проекты}
     \resumeSubHeadingListStart
       \resumeProjectHeading
-          {\href{\github/change-detector}{\textbf{\underline{Change Detector}}} $|$ \emph{\cpp, Python, PyTorch, ONNX}}{Август 2025 - Июнь 2026}
+          {\href{\github/change-detector}{\textbf{\underline{ПО автоматического обнаружения изменений на спутниковых снимках}}} $|$ \emph{Python, PyTorch, \cpp}}{2026~г.}
           \resumeItemListStart
-            \resumeItem{Обучил CNN (UNet++, ResNet-34) для сегментации изменений на снимках. Метрики: $F1 \approx 0.86$, $IoU \approx 0.76$.}
-            \resumeItem{Выполнил ручную разметку кастомного датасета, получив более 2000 эталонных снимков размером $256 \times 256$.}
+            \resumeItem{Обучил CNN (UNet\plusplus, ResNet-34) для сегментации изменений на снимках. Метрики: $F1 \approx 0.86$, $IoU \approx 0.76$.}
+            \resumeItem{Выполнил ручную разметку кастомного датасета, получив более 2000 эталонных снимков.}
+            \resumeItem{Разработал ПО с GUI на \cpp~и QT, в который экспортировал обученную модель в формате ONNX.}
           \resumeItemListEnd
           
       \resumeProjectHeading
-          {\href{\github/acc-2025-validation-pipeline}{\textbf{\underline{ML Image Validator}}} $|$ \emph{Python, FastAPI, ML Pipeline}}{Октябрь 2025 - Декабрь 2025}
+          {\href{\github/acc-2025-validation-pipeline}{\textbf{\underline{Веб приложение валидации данных на основе ML}}} $|$ \emph{Python, FastAPI, ML Pipeline}}{2025~г.}
           \resumeItemListStart
             \resumeItem{Реализовал микросервисный пайплайн для ML-валидации изображений в команде из 3 человек.}
             \resumeItem{Создал на FastAPI микросервис, обеспечивающий стабильную проверку качества данных.}
           \resumeItemListEnd
 
       \resumeProjectHeading
-          {\href{\github/native-compiler}{\textbf{\underline{Native-compiler}}} $|$ \emph{\cpp}}{Октябрь 2025 - Декабрь 2025}
+          {\href{\github/native-compiler}{\textbf{\underline{Консольная утилита-компилятор}}} $|$ \emph{\cpp}}{2025~г.}
           \resumeItemListStart
             \resumeItem{Разработал CLI-утилиту, демонстрирующую работу основных фаз компилятора с реализацией 
             лексического, семантического, синтаксического анализа; генератора 3-адресного кода и постфиксной формы.}
@@ -133,28 +139,23 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Центральный Университет}{Москва}
-      {Математика и компьютерные науки, трек ML-online $|$ GPA: 9.25 $|$ Магистратура}{2025 - Настоящее время}
-    \resumeItemListStart
-      \resumeItem{Релевантные курсы: ML, Data Engineering, Основы статистики.}
-      \resumeItem{Выиграл грант, покрывающий 50\% стоимости обучения.}
-    \resumeItemListEnd
+      {Математика и компьютерные науки, трек ML $|$ Магистратура}{2025 - н.в.}
     \resumeSubheading
-      {РГРТУ имени В.Ф. Уткина}{Рязань}
-      {Программная инженерия $|$ GPA: 4.80 $|$ Бакалавриат}{2022 - 2026}
-    \resumeItemListStart
-      \resumeItem{Релевантные курсы: Высшая математика, алгоритмы, низкоуровневое программирование.}
-      \resumeItem{Бюджетная форма обучения.}
-    \resumeItemListEnd
+      {Рязанский Государственный Радиотехнический Университет}{Рязань}
+      {Факультет вычислительной техники, Программная инженерия $|$ Бакалавриат}{2022 - 2026}
   \resumeSubHeadingListEnd
-  
-%-----------Дополнительно-----------
-\section{Дополнительная информация}
+
+%-----------НАВЫКИ-----------
+\section{Навыки}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
+     \textbf{Python, ML \& CV}{: PyTorch, CatBoost, XGBoost, LightGBM, Scikit-Learn, OpenCV, Pandas, NumPy, SciPy} \\
+     \textbf{\cpp}{: CMake, ONNX, Boost, GTest, Valgrind, Conan} \\
+     \textbf{Data Engineering}{: PostgreSQL, Greenplum, ClickHouse, Amazon S3, Airflow, Spark, Kafka} \\
+     \textbf{DevOps \& CI/CD}{: Docker, Git, Github Actions, Linux (NixOS, Ubuntu)} \\
      \textbf{Языки}{: Английский (B2)}
     }}
  \end{itemize}
-
 
 %-------------------------------------------
 \end{document}
