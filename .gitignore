@@ -1,6 +1,5 @@
 /build/
-/cv.pdf
-/letter.pdf
+/*.pdf
 
 # Core latex/pdflatex auxiliary files:
 *.aux

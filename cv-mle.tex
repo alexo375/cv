@@ -1,0 +1,162 @@
+\documentclass[letterpaper,11pt]{article}
+
+\input{preamble/common}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.7in} % было "-.5in". Подняли текст чуть выше
+\addtolength{\textheight}{1.4in} % было "1.0in". Увеличили рабочую область страницы
+
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-----------CUSTOM-COMMANDS-----------
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubheadingCompany}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-2pt}
+}
+
+\newcommand{\resumeSubrole}[1]{
+  \vspace{4pt}
+  \textit{\small#1}\par\vspace{2pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+%----------ЗАГОЛОВОК----------
+\begin{center}
+  \begin{minipage}[b]{0.80\textwidth}
+      \textbf{\Huge \scshape Горобченко Александр} \\ \vspace{4pt}
+      \large ML Engineer \\ \vspace{4pt}
+      \small \href{tel:+79953755007}{+7 (995) 375-50-07} $|$ 
+      \href{mailto:\username@yandex.ru}{\underline{\username@yandex.ru}} $|$ 
+      \href{https://t.me/\username}{\underline{t.me/\username}} $|$
+      \href{\github}{\underline{github.com/\username}} \\ \vspace{2pt}
+      \small 11.09.2004 \\ \vspace{2pt}
+      \small Рязань / Готов к релокации в Санкт-Петербург
+  \end{minipage}%
+  \begin{minipage}[b]{0.18\textwidth}
+      \raggedleft
+      \includegraphics[width=4cm, keepaspectratio]{me.png} 
+  \end{minipage}
+\end{center}
+
+%----------О-СЕБЕ----------
+\section{О Себе}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     ML Engineer с экспертизой в Computer Vision и оптимизации алгоритмов (Python / \cpp).
+     Имею 3 года R\&D-опыта в области обработки изображений и научные публикации.
+     Специализируюсь на полном цикле создания ML-решений: от исследований и подготовки датасетов до оптимизации 
+     инференса и микросервисного деплоя.
+    }} 
+ \end{itemize}
+
+%-----------ОПЫТ-----------
+\section{Опыт работы}
+  \resumeSubHeadingListStart
+    \resumeSubheadingCompany
+      {НИИ обработки аэрокосмических изображений <<Фотон>>}{Июль 2023 -- Июль 2026}
+      
+      \resumeSubrole{ML-инженер}
+      \small{Отвечал за полный цикл создания ML-компонента системы обнаружения изменений на аэрокосмических снимках площадной съемки: 
+      сформировал и разметил обучающий датасет по данным космических аппаратов, обучил нейросетевую модель сегментации
+      UNet\plusplus~на ResNet-34 с помощью PyTorch. 
+      Разработал прикладное ПО на \cpp~(с GUI на Qt), интегрировав в него обученную модель в формате ONNX и
+      объединив детерминированные алгоритмы компьютерного зрения с методами глубокого обучения.}
+      
+      \vspace{4pt}
+
+      \resumeSubrole{R\&D-инженер}
+      \small{Проводил научно-исследовательские работы в области обработки аэрокосмических изображений.
+      Устранил появление артефактов при сшивке мозаичных изображений сложных сцен,
+      разработав алгоритм формирования стоимостной карты штрафов для корректного проведения линии пореза.
+      Выполнил анализ предметной области, по материалам исследований подготовил и опубликовал 4 научные статьи.}
+  \resumeSubHeadingListEnd
+
+%-----------ПРОЕКТЫ-----------
+\section{Проекты}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\href{\github/change-detector}{\textbf{\underline{ПО автоматического обнаружения изменений на спутниковых снимках}}} $|$ \emph{Python, PyTorch, \cpp}}{2026~г.}
+          \resumeItemListStart
+            \resumeItem{Обучил CNN (UNet\plusplus, ResNet-34) для сегментации изменений на снимках. Метрики: $F1 \approx 0.86$, $IoU \approx 0.76$.}
+            \resumeItem{Выполнил ручную разметку кастомного датасета, получив более 2000 эталонных снимков.}
+            \resumeItem{Разработал ПО с GUI на \cpp~и QT, в который экспортировал обученную модель в формате ONNX.}
+          \resumeItemListEnd
+          
+      \resumeProjectHeading
+          {\href{\github/acc-2025-validation-pipeline}{\textbf{\underline{Веб приложение валидации данных на основе ML}}} $|$ \emph{Python, FastAPI, ML Pipeline}}{2025~г.}
+          \resumeItemListStart
+            \resumeItem{Реализовал микросервисный пайплайн для ML-валидации изображений в команде из 3 человек.}
+            \resumeItem{Интегрировал ML-модели (MediaPipe, DeepFace, Facer, U2Net) для валидации и комплексной оценки изображений по множеству контекстных параметров.}
+            \resumeItem{Создал на FastAPI микросервис, обеспечивающий стабильную проверку качества данных.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\href{\github/native-compiler}{\textbf{\underline{Консольная утилита-компилятор}}} $|$ \emph{\cpp}}{2025~г.}
+          \resumeItemListStart
+            \resumeItem{Разработал CLI-утилиту, демонстрирующую работу основных фаз компилятора с реализацией 
+            лексического, семантического, синтаксического анализа; генератора 3-адресного кода и постфиксной формы.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------ОБРАЗОВАНИЕ-----------
+\section{Образование}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Центральный Университет}{Москва}
+      {Математика и компьютерные науки, трек ML $|$ Магистратура}{2025 - н.в.}
+    \resumeSubheading
+      {Рязанский Государственный Радиотехнический Университет}{Рязань}
+      {Факультет вычислительной техники, Программная инженерия $|$ Бакалавриат}{2022 - 2026}
+  \resumeSubHeadingListEnd
+
+%-----------НАВЫКИ-----------
+\section{Навыки}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Python, ML \& CV}{: PyTorch, CatBoost, XGBoost, LightGBM, Scikit-Learn, OpenCV, Pandas, NumPy, SciPy} \\
+     \textbf{\cpp}{: CMake, ONNX, Boost, GTest, Valgrind, Conan} \\
+     \textbf{Data Engineering}{: PostgreSQL, Greenplum, ClickHouse, Amazon S3, Airflow, Spark, Kafka} \\
+     \textbf{DevOps \& CI/CD}{: Docker, Git, Github Actions, Linux (NixOS, Ubuntu)} \\
+     \textbf{Языки}{: Английский (B2)}
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}

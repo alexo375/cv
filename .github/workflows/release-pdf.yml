@@ -48,7 +48,8 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            cv.pdf
+            cv-cve.pdf
+            cv-mle.pdf
             letter.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -57,7 +58,7 @@ jobs:
       - name: Prepare site directory
         run: |
           mkdir -p _site
-          cp cv.pdf _site/
+          cp cv-cve.pdf cv-mle.pdf _site/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
