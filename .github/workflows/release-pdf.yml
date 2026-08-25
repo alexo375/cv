@@ -26,7 +26,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Сборка через официальный экшен texlive-action
+      # Сборка всех PDF через make all
       - name: Compile LaTeX documents
         uses: xu-cheng/texlive-action@v2
         with:
@@ -35,7 +35,7 @@ jobs:
             apk add --no-cache make bash
             make all
 
-      # Публикация/обновление релиза
+      # Публикация всех скомпилированных PDF в релизы по маске
       - name: Update GitHub Release
         uses: softprops/action-gh-release@v2
         with:
@@ -48,17 +48,16 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            cv-cve.pdf
-            cv-mle.pdf
-            letter.pdf
+            cv-*.pdf
+            letter*.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Публикация резюме на GitHub Pages
+      # Копирование всех PDF в каталог GitHub Pages по маске
       - name: Prepare site directory
         run: |
           mkdir -p _site
-          cp cv-cve.pdf cv-mle.pdf _site/
+          cp cv-*.pdf letter*.pdf _site/ 2>/devnull || true
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
