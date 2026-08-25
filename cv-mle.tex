@@ -6,14 +6,14 @@
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.7in} % было "-.5in". Подняли текст чуть выше
-\addtolength{\textheight}{1.4in} % было "1.0in". Увеличили рабочую область страницы
+\addtolength{\topmargin}{-.8in}
+\addtolength{\textheight}{1.6in}
 
 \setlength{\tabcolsep}{0in}
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
+  \vspace{-6pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 %-----------CUSTOM-COMMANDS-----------
@@ -116,11 +116,11 @@
           \resumeItemListStart
             \resumeItem{Обучил CNN (UNet\plusplus, ResNet-34) для сегментации изменений на снимках. Метрики: $F1 \approx 0.86$, $IoU \approx 0.76$.}
             \resumeItem{Выполнил ручную разметку кастомного датасета, получив более 2000 эталонных снимков.}
-            \resumeItem{Разработал ПО с GUI на \cpp~и QT, в который экспортировал обученную модель в формате ONNX.}
+            \resumeItem{Разработал ПО с GUI на \cpp~и Qt, в которое экспортировал обученную модель в формате ONNX.}
           \resumeItemListEnd
           
       \resumeProjectHeading
-          {\href{\github/acc-2025-validation-pipeline}{\textbf{\underline{Веб приложение валидации данных на основе ML}}} $|$ \emph{Python, FastAPI, ML Pipeline}}{2025~г.}
+          {\href{\github/acc-2025-validation-pipeline}{\textbf{\underline{Веб-приложение валидации данных на основе ML}}} $|$ \emph{Python, FastAPI, ML Pipeline}}{2025~г.}
           \resumeItemListStart
             \resumeItem{Реализовал микросервисный пайплайн для ML-валидации изображений в команде из 3 человек.}
             \resumeItem{Интегрировал ML-модели (MediaPipe, DeepFace, Facer, U2Net) для валидации и комплексной оценки изображений по множеству контекстных параметров.}
@@ -128,11 +128,13 @@
           \resumeItemListEnd
 
       \resumeProjectHeading
-          {\href{\github/native-compiler}{\textbf{\underline{Консольная утилита-компилятор}}} $|$ \emph{\cpp}}{2025~г.}
+          {\href{\github/otto-recsys-solution}{\textbf{\underline{Кейс с Kaggle от OTTO --- Рекомендательная система товаров}}} $|$ \emph{Python, LightGBM}}{2026~г.}
           \resumeItemListStart
-            \resumeItem{Разработал CLI-утилиту, демонстрирующую работу основных фаз компилятора с реализацией 
-            лексического, семантического, синтаксического анализа; генератора 3-адресного кода и постфиксной формы.}
+            \resumeItem{Разработал гибридный 2-этапный пайплайн рекомендаций сессионных товаров (private score: 0.49829).}
+            \resumeItem{Реализовал генерацию кандидатов на базе матриц взаимодействия 3 основных типов событий пользователя.}
+            \resumeItem{Сформировал более 20 признаков и обучил модель градиентного бустинга для ранжирования кандидатов.}
           \resumeItemListEnd
+
     \resumeSubHeadingListEnd
 
 %-----------ОБРАЗОВАНИЕ-----------
@@ -153,7 +155,7 @@
      \textbf{Python, ML \& CV}{: PyTorch, CatBoost, XGBoost, LightGBM, Scikit-Learn, OpenCV, Pandas, NumPy, SciPy} \\
      \textbf{\cpp}{: CMake, ONNX, Boost, GTest, Valgrind, Conan} \\
      \textbf{Data Engineering}{: PostgreSQL, Greenplum, ClickHouse, Amazon S3, Airflow, Spark, Kafka} \\
-     \textbf{DevOps \& CI/CD}{: Docker, Git, Github Actions, Linux (NixOS, Ubuntu)} \\
+     \textbf{DevOps \& CI/CD}{: Docker, Git, GitHub Actions, Linux (NixOS, Ubuntu)} \\
      \textbf{Языки}{: Английский (B2)}
     }}
  \end{itemize}

@@ -61,7 +61,7 @@
 \begin{center}
   \begin{minipage}[b]{0.80\textwidth}
       \textbf{\Huge \scshape Горобченко Александр} \\ \vspace{4pt}
-      \large CV Engineer \\ \vspace{4pt}
+      \large RecSys / ML Engineer \\ \vspace{4pt}
       \small \href{tel:+79953755007}{+7 (995) 375-50-07} $|$ 
       \href{mailto:\username@yandex.ru}{\underline{\username@yandex.ru}} $|$ 
       \href{https://t.me/\username}{\underline{t.me/\username}} $|$
@@ -92,7 +92,7 @@
     \resumeSubheadingCompany
       {\href{https://rsreu.ru/vuz/structure/nii-foton}{\underline{НИИ обработки аэрокосмических изображений <<Фотон>>}}}{Июль 2023 -- Июль 2026}
       
-      \resumeSubrole{CV-инженер}
+      \resumeSubrole{ML-инженер}
       \small{Отвечал за полный цикл создания ML-компонента системы обнаружения изменений на аэрокосмических снимках площадной съемки: 
       сформировал и разметил обучающий датасет по данным космических аппаратов, обучил нейросетевую модель сегментации
       UNet\plusplus~на ResNet-34 с помощью PyTorch. 
@@ -112,27 +112,27 @@
 \section{Проекты}
     \resumeSubHeadingListStart
       \resumeProjectHeading
+          {\href{\github/otto-recsys-solution}{\textbf{\underline{Кейс с Kaggle от OTTO --- Рекомендательная система товаров}}} $|$ \emph{Python, LightGBM}}{2026~г.}
+          \resumeItemListStart
+            \resumeItem{Разработал гибридный 2-этапный пайплайн рекомендаций сессионных товаров (private score: 0.49829).}
+            \resumeItem{Реализовал генерацию кандидатов на базе матриц взаимодействия 3 основных типов событий пользователя.}
+            \resumeItem{Сформировал более 20 признаков и обучил модель градиентного бустинга для ранжирования кандидатов.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
           {\href{\github/change-detector}{\textbf{\underline{ПО автоматического обнаружения изменений на спутниковых снимках}}} $|$ \emph{Python, PyTorch, \cpp}}{2026~г.}
           \resumeItemListStart
             \resumeItem{Обучил CNN (UNet\plusplus, ResNet-34) для сегментации изменений на снимках. Метрики: $F1 \approx 0.86$, $IoU \approx 0.76$.}
             \resumeItem{Выполнил ручную разметку кастомного датасета, получив более 2000 эталонных снимков.}
             \resumeItem{Разработал ПО с GUI на \cpp~и Qt, в которое экспортировал обученную модель в формате ONNX.}
           \resumeItemListEnd
-          
+
       \resumeProjectHeading
           {\href{\github/acc-2025-validation-pipeline}{\textbf{\underline{Веб-приложение валидации данных на основе ML}}} $|$ \emph{Python, FastAPI, ML Pipeline}}{2025~г.}
           \resumeItemListStart
             \resumeItem{Реализовал микросервисный пайплайн для ML-валидации изображений в команде из 3 человек.}
             \resumeItem{Интегрировал ML-модели (MediaPipe, DeepFace, Facer, U2Net) для валидации и комплексной оценки изображений по множеству контекстных параметров.}
             \resumeItem{Создал на FastAPI микросервис, обеспечивающий стабильную проверку качества данных.}
-          \resumeItemListEnd
-
-      \resumeProjectHeading
-          {\href{\github/otto-recsys-solution}{\textbf{\underline{Кейс с Kaggle от OTTO --- Рекомендательная система товаров}}} $|$ \emph{Python, LightGBM}}{2026~г.}
-          \resumeItemListStart
-            \resumeItem{Разработал гибридный 2-этапный пайплайн рекомендаций сессионных товаров (private score: 0.49829).}
-            \resumeItem{Реализовал генерацию кандидатов на базе матриц взаимодействия 3 основных типов событий пользователя.}
-            \resumeItem{Сформировал более 20 признаков и обучил модель градиентного бустинга для ранжирования кандидатов.}
           \resumeItemListEnd
 
     \resumeSubHeadingListEnd
