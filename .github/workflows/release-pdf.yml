@@ -35,7 +35,7 @@ jobs:
             apk add --no-cache make bash
             make all
 
-      # Публикация всех скомпилированных PDF в релизы по маске
+      # Публикация всех скомпилированных PDF в релизы
       - name: Update GitHub Release
         uses: softprops/action-gh-release@v2
         with:
@@ -48,16 +48,17 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            cv-*.pdf
-            letter*.pdf
+            *.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Копирование всех PDF в каталог GitHub Pages по маске
+      # Копирование всех скомпилированных PDF в директорию для GitHub Pages
       - name: Prepare site directory
+        shell: bash
         run: |
           mkdir -p _site
-          cp cv-*.pdf letter*.pdf _site/ 2>/devnull || true
+          cp *.pdf _site/
+          touch _site/.nojekyll
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
