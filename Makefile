@@ -1,4 +1,4 @@
-SHELL := /bin/bash
+SHELL := bash
 
 ENGINE ?= pdflatex
 LATEXMK := latexmk
@@ -33,7 +33,7 @@ clean:
 	@for target in $(TARGETS); do \
 		$(LATEXMK) -C -outdir=$(OUTROOT)/$$target || true ; \
 	done
-	@find $(OUTROOT) -type f ! -name '*.pdf' -delete 2>/devnull || true
+	@find $(OUTROOT) -type f ! -name '*.pdf' -delete 2>/dev/null || true
 
 cleandist: clean
 	@rm -rf $(OUTROOT)

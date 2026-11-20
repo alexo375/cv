@@ -1,0 +1,36 @@
+% Personal profile and contact information (Single Source of Truth)
+
+\newcommand{\fullName}{Горобченко Александр}
+\newcommand{\phoneFormatted}{+7 (995) 375-50-07}
+\newcommand{\phoneUrl}{+79953755007}
+\newcommand{\emailAddr}{alexo375@yandex.ru}
+\newcommand{\telegramUser}{alexo375}
+\newcommand{\githubUser}{alexo375}
+\newcommand{\githubUrl}{https://github.com/\githubUser}
+\newcommand{\birthDate}{11.09.2004}
+\newcommand{\locationInfo}{Рязань / Готов к релокации в Москву}
+\newcommand{\photoFile}{me.png}
+
+% Compatibility aliases
+\providecommand{\username}{\githubUser}
+\providecommand{\github}{\githubUrl}
+
+% Reusable Header Macro
+\newcommand{\renderheader}[1]{%
+  \begin{center}
+    \begin{minipage}[b]{0.80\textwidth}
+        \textbf{\Huge \scshape \fullName} \\ \vspace{4pt}
+        \large #1 \\ \vspace{4pt}
+        \small \href{tel:\phoneUrl}{\phoneFormatted} $|$ 
+        \href{mailto:\emailAddr}{\underline{\emailAddr}} $|$ 
+        \href{https://t.me/\telegramUser}{\underline{t.me/\telegramUser}} $|$
+        \href{\githubUrl}{\underline{github.com/\githubUser}} \\ \vspace{2pt}
+        \small \birthDate \\ \vspace{2pt}
+        \small \locationInfo
+    \end{minipage}%
+    \begin{minipage}[b]{0.18\textwidth}
+        \raggedleft
+        \includegraphics[width=4cm, keepaspectratio]{\photoFile} 
+    \end{minipage}
+  \end{center}
+}

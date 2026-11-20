@@ -1,0 +1,46 @@
+\newcommand{\projectBotDetector}{%
+	\resumeProjectHeading
+	{\href{\githubUrl/bot-detector-maas}{\textbf{\underline{Сервис классификации ботов в диалогах}}} $|$ \emph{FastAPI, Triton, RabbitMQ, Prefect, MLflow}}{2026~г.}
+	\resumeItemListStart
+	\resumeItem{Провел серию экспериментов из соревнования <<You're Bot! v2.0>>, обучил ансамбль моделей классификации}
+	\resumeItem{Развернул инфраструктуру инференса: шлюз FastAPI, брокер RabbitMQ, сервер Triton, задачи Prefect}
+	\resumeItem{Настроил мониторинг data drift, логирование в ClickHouse, дашборды Grafana, трекинг MLflow}
+	\resumeItemListEnd
+}
+
+\newcommand{\projectChangeDetector}{%
+	\resumeProjectHeading
+	{\href{\githubUrl/change-detector}{\textbf{\underline{ПО автоматического обнаружения изменений на спутниковых снимках}}} $|$ \emph{Python, PyTorch, \cpp}}{2026~г.}
+	\resumeItemListStart
+	\resumeItem{Обучил CNN (UNet\plusplus, ResNet-34) для сегментации изменений на снимках. Метрики: $F1 \approx 0.86$, $IoU \approx 0.76$.}
+	\resumeItem{Выполнил ручную разметку кастомного датасета, получив более 2000 эталонных снимков.}
+	\resumeItem{Разработал ПО с GUI на \cpp~и Qt, в которое экспортировал обученную модель в формате ONNX.}
+	\resumeItemListEnd
+}
+
+\newcommand{\projectAccValidation}{%
+	\resumeProjectHeading
+	{\href{\githubUrl/acc-2025-validation-pipeline}{\textbf{\underline{Веб-приложение валидации данных на основе ML}}} $|$ \emph{Python, FastAPI, ML Pipeline}}{2025~г.}
+	\resumeItemListStart
+	\resumeItem{Реализовал микросервисный пайплайн для ML-валидации изображений в команде из 3 человек.}
+	\resumeItem{Интегрировал ML-модели (MediaPipe, DeepFace, Facer, U2Net) для валидации и комплексной оценки.}
+	\resumeItem{Создал на FastAPI микросервис, обеспечивающий стабильную проверку качества данных.}
+	\resumeItemListEnd
+}
+
+\newcommand{\projectOttoRecsys}{%
+	\resumeProjectHeading
+	{\href{\githubUrl/otto-recsys-solution}{\textbf{\underline{Кейс с Kaggle от OTTO --- Рекомендательная система товаров}}} $|$ \emph{Python, LightGBM}}{2026~г.}
+	\resumeItemListStart
+	\resumeItem{Разработал гибридный 2-этапный пайплайн рекомендаций сессионных товаров (private score: 0.49829).}
+	\resumeItem{Реализовал генерацию кандидатов на базе матриц взаимодействия 3 основных типов событий пользователя.}
+	\resumeItem{Сформировал более 20 признаков и обучил модель градиентного бустинга для ранжирования кандидатов.}
+	\resumeItemListEnd
+}
+
+\ifdefined\currentProjects
+	\section{Проекты}
+	\resumeSubHeadingListStart
+	\currentProjects
+	\resumeSubHeadingListEnd
+\fi

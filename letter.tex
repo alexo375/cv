@@ -1,6 +1,7 @@
 \documentclass[letterpaper,11pt]{article}
 
 \input{preamble/common}
+\input{preamble/profile}
 
 % Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
@@ -16,22 +17,7 @@
 \begin{document}
 
 %----------ЗАГОЛОВОК----------
-\begin{center}
-  \begin{minipage}[b]{0.80\textwidth}
-      \textbf{\Huge \scshape Горобченко Александр} \\ \vspace{4pt}
-      \large ML Engineer \\ \vspace{4pt}
-      \small \href{tel:+79953755007}{+7 (995) 375-50-07} $|$ 
-      \href{mailto:\username@yandex.ru}{\underline{\username@yandex.ru}} $|$ 
-      \href{https://t.me/\username}{\underline{t.me/\username}} $|$
-      \href{\github}{\underline{github.com/\username}} \\ \vspace{2pt}
-      \small 11.09.2004 \\ \vspace{2pt}
-      \small Рязань / Готов к релокации в Москву
-  \end{minipage}%
-  \begin{minipage}[b]{0.18\textwidth}
-      \raggedleft
-      \includegraphics[width=4cm, keepaspectratio]{me.png} 
-  \end{minipage}
-\end{center}
+\renderheader{ML Engineer}
 
 \vspace{0.5cm} % Отступ между шапкой и текстом письма
 \hrule % Тонкая линия для визуального разделения
@@ -46,6 +32,6 @@
 Буду рад познакомиться и более подробно рассказать о себе.
 
 С уважением,\\
-Александр Горобченко
+\fullName
 
 \end{document}
