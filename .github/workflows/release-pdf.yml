@@ -42,13 +42,14 @@ jobs:
           tag_name: latest
           name: "Latest PDF Build"
           body: |
-            Автоматически скомпилированные версии резюме и сопроводительного письма.
+            Автоматически скомпилированные версии резюме и сопроводительных писем.
             
             Последний коммит: ${{ github.event.head_commit.message }}
           draft: false
           prerelease: false
           files: |
             *.pdf
+            letters/*.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -56,8 +57,9 @@ jobs:
       - name: Prepare site directory
         shell: bash
         run: |
-          mkdir -p _site
-          cp *.pdf _site/
+          mkdir -p _site/letters
+          cp -u *.pdf _site/ 2>/dev/null || cp *.pdf _site/
+          cp -u letters/*.pdf _site/letters/ 2>/dev/null || cp letters/*.pdf _site/letters/
           touch _site/.nojekyll
 
       - name: Upload Pages artifact
